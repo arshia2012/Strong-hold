@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>StrongHold — Live Monitor</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <span class="brand-mark"></span>
+    <div>
+      <div class="brand-name">STRONGHOLD</div>
+      <div class="brand-sub">Network Watch Console</div>
+    </div>
+  </div>
+  <div class="live-status">
+    <span class="live-dot"></span>
+    <span id="last-updated">connecting…</span>
+  </div>
+</header>
+
+<div class="stats">
+  <div class="stat">
+    <div class="stat-label">Total Events</div>
+    <div class="stat-value" id="stat-total">—</div>
+  </div>
+  <div class="stat">
+    <div class="stat-label">High Severity</div>
+    <div class="stat-value warn" id="stat-high">—</div>
+  </div>
+  <div class="stat">
+    <div class="stat-label">Distinct Sources</div>
+    <div class="stat-value" id="stat-sources">—</div>
+  </div>
+</div>
+
+<main>
+  <div class="log-header">
+    <div class="log-title">Live Event Log</div>
+  </div>
+
+  <div class="log-panel">
+    <table>
+      <thead>
+        <tr>
+          <th>Time</th>
+          <th>Source</th>
+          <th>Type</th>
+          <th>IP</th>
+          <th>Severity</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody id="event-body">
+        <tr><td colspan="6" class="empty-state">در حال خواندن رویدادها…</td></tr>
+      </tbody>
+    </table>
+  </div>
+</main>
+
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
